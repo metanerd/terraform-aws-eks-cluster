@@ -33,7 +33,7 @@ $(BASE): $(GOEXE)
 
 ## Download vendor dependencies to vendor/
 $(BASE)/vendor: $(BASE) $(GOBIN)/dep
-	cd $(BASE) && dep init && dep ensure
+	cd $(BASE) && dep ensure
 
 .PHONY : init
 ## Initialize tests
