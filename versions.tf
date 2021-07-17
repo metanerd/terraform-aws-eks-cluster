@@ -1,10 +1,10 @@
 terraform {
-  required_version = ">= 0.12.26"
+  required_version = ">= 0.13.0"
 
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = ">= 2.0"
+      version = ">= 3.38"
     }
     template = {
       source  = "hashicorp/template"
@@ -19,10 +19,12 @@ terraform {
       version = ">= 1.3"
     }
     kubernetes = {
-      # Version 2.0 has breaking changes, this module needs conversion to use it.
-      # After converting to 2.0, restore the provider-pinning Bats test in test/Makefile
       source  = "hashicorp/kubernetes"
-      version = "~> 1.11"
+      version = ">= 1.13"
+    }
+    tls = {
+      source  = "hashicorp/tls"
+      version = ">= 2.2.0"
     }
   }
 }
